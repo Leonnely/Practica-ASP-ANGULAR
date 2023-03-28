@@ -8,8 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AutoMapper;
 using DAL.Repositorios.Contrato;
 using DAL.Repositorios;
+using Utility;
+using BLL.Servicios.Contrato;
+using BLL.Servicios;
 
 namespace IOC
 {
@@ -26,6 +30,16 @@ namespace IOC
 
             service.AddTransient(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             service.AddScoped<IVentaRepository, VentaRepository>();
+            service.AddAutoMapper(typeof(AutoMapperProfile));
+
+
+            service.AddScoped<IRolService,RolService>();
+            service.AddScoped<IUsuarioService, UsuarioService>();
+            service.AddScoped<ICategoriaService,CategoriaService>();
+            service.AddScoped<IProductoService, ProductoService>();
+            service.AddScoped<IMenuService, MenuService>();
+            service.AddScoped<IVentaService, VentaService>();
+            service.AddScoped<IDashBoardService, DashBoardService>();
         }
 
     }

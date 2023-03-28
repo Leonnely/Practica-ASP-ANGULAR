@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class CategoriaDTO
+    public class VentaSemanaDTO
     {
-        public int IdCategoria { get; set; }
-
-        public string? Nombre { get; set; }
+        public string? Fecha { get; set; }
+        public int? Total { get; set; }
     }
 }
